@@ -1,0 +1,198 @@
+<div class="spacer">
+  
+  <form action="/api/1.0/friends" method="POST">
+    
+
+    <div class="field">
+      <label class="label">Name <span class="tag is-danger has-text-weight-light">(Required)</span></label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Jane Doe" name="name" required>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Profile Picture URL <span class="tag is-danger has-text-weight-light">(Required)</span></label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Profile Picture URL" name="imageUrl" required>
+      </div>
+    </div>
+  
+    {{!-- Use iteration  --}}
+    <div class="field">
+      <label class="label">You find enjoyment in the little things.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question1">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You are curious about everything.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question2">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You have an eye for detail.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question3">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You believe you are very patient</label>
+      <div class="control">
+        <div class="select">
+          <select name="question4">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You are able to acknowledge your own mistakes.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question5">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You have no difficulty putting yourself in others shoes.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question6">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You believe you are a happy person.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question7">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You believe your future looks good.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question8">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You don't get bored easily.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question9">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">You continously attempt to learn new skills.</label>
+      <div class="control">
+        <div class="select">
+          <select name="question10">
+            <option>1 (Strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Strongly agree)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button id="submit-button" class="button is-primary"><i class="fa fa-paper-plane fa-fw"></i>Submit</button>
+      </div>
+      
+      <div class="control">
+        <a class="button is-light" href="/"><i class="fa fa-times fa-fw"></i>Cancel</a>
+      </div>
+    </div>
+
+  </form>
+
+  <div id="modal" class="modal {{ modalActive }}">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Your best match is <strong>{{ matchName }}</strong></p>
+    </header>
+    <section class="modal-card-body">
+      <img src="{{ imageUrl }}" alt="{{ matchName}}">
+    </section>
+    <footer class="modal-card-foot">
+      <button id="close-modal-button" class="button is-success">Ok!</button>
+    </footer>
+  </div>
+</div>
+
+</div>
